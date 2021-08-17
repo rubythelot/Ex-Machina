@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<!--
+			Display A Random Image Via JavaScript / DOM 
+			Copyright 2007 Doug Vanderweide, dba Rescue-ME
+			http://www.dougv.com
+			
+			Distributed under the Creative Commons Attribution / Share-Alike 2.5 License
+			http://creativecommons.org/licenses/by-sa/2.5/
+			
+			Any distribution or derivative work based on this script must include the
+			original source code from this work, and must retain this copyright
+			notice block intact.
+		-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>KISS THE ICON</title>
+		<script type="text/javascript">
+			var lastIndex = 0;
+			
+			function randomImage() {
+				var theImage = document.getElementById('myimage');
+				var imgDir = 'images/';
+				var imgArray = new Array('img000000000.jpg','img000000001.jpg','img000000002.jpg','img000000003.jpg','img000000004.jpg','img000000005.jpg','img000000006.jpg','img000000007.jpg','img000000008.jpg','img000000009.jpg','img000000010.jpg','img000000011.jpg','img000000012.jpg','img000000013.jpg','img000000014.jpg','img000000015.jpg','img000000016.jpg','img000000017.jpg','img000000018.jpg','img000000019.jpg','img000000020.jpg','img000000021.jpg','img000000022.jpg','img000000023.jpg','img000000024.jpg','img000000025.jpg','img000000026.jpg','img000000027.jpg','img000000028.jpg','img000000029.jpg','img000000030.jpg','img000000031.jpg','img000000032.jpg','img000000033.jpg','img000000034.jpg','img000000035.jpg','img000000036.jpg','img000000037.jpg','img000000038.jpg','img000000039.jpg','img000000040.jpg','img000000041.jpg','img000000042.jpg','img000000043.jpg','img000000044.jpg','img000000045.jpg','img000000046.jpg','img000000047.jpg','img000000048.jpg','img000000049.jpg','img000000050.jpg','img000000051.jpg','img000000052.jpg','img000000053.jpg','img000000054.jpg','img000000055.jpg','img000000056.jpg','img000000057.jpg','img000000058.jpg','img000000059.jpg','img000000060.jpg','img000000061.jpg','img000000062.jpg','img000000063.jpg','img000000064.jpg','img000000065.jpg','img000000066.jpg','img000000067.jpg','img000000068.jpg','img000000069.jpg','img000000070.jpg','img000000071.jpg','img000000072.jpg','img000000073.jpg','img000000074.jpg','img000000075.jpg','img000000076.jpg','img000000077.jpg','img000000078.jpg','img000000079.jpg','img000000080.jpg','img000000081.jpg','img000000082.jpg','img000000083.jpg','img000000084.jpg','img000000085.jpg','img000000086.jpg','img000000087.jpg','img000000088.jpg','img000000089.jpg','img000000090.jpg','img000000091.jpg','img000000092.jpg','img000000093.jpg','img000000094.jpg','img000000095.jpg','img000000096.jpg','img000000097.jpg','img000000098.jpg','img000000099.jpg','img000000100.jpg');
+				var imgIndex = 0;
+				
+				if(imgArray.length > 1) {
+					while(imgIndex == lastIndex) {
+						imgIndex = Math.floor(Math.random() * imgArray.length);
+					}
+					lastIndex = imgIndex;
+				
+					var imgPath = imgDir + imgArray[imgIndex];
+					
+					theImage.src = imgPath;
+					theImage.alt = imgArray[imgIndex];
+				}
+				else {
+					return false;
+				}
+			}
+		</script>
+	    <link href="../demo.css" rel="stylesheet" type="text/css" />
+	</head>
+		<body onload="randomImage()">
+			<div class="middlebox">
+			    <a href="#" onclick="randomImage()"><img id="myimage" /></a>
+	        </div>
+			<p>&nbsp; </p>
+		</body>
+</html>
